@@ -1,0 +1,317 @@
+Processing esp32-s3-devkitc-1 (board: esp32-s3-devkitc-1; platform: https://github.com/pioarduino/platform-espressif32.git#develop; framework: espidf)
+-------------------------------------------------------------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-s3-devkitc-1.html
+PLATFORM: Espressif 32 (54.3.20+develop.sha.7da09cf) > Espressif ESP32-S3-DevKitC-1-N8 (8 MB QD, No PSRAM)
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 16MB Flash
+DEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-espidf @ 3.50401.0 (5.4.1) 
+ - tool-cmake @ 3.30.2 
+ - tool-esp-rom-elfs @ 0.0.1+20241011 
+ - tool-esptoolpy @ 4.8.9 
+ - tool-mkfatfs @ 2.0.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-mkspiffs @ 2.230.0 (2.30) 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 14.2.0+20240403 
+ - tool-xtensa-esp-elf-gdb @ 14.2.0+20240403 
+ - toolchain-esp32ulp @ 1.23800.240113 (2.38.0) 
+ - toolchain-riscv32-esp @ 14.2.0+20241119 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20241119
+Reading CMake configuration...
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Compiling .pio/build/esp32-s3-devkitc-1/main/sketch.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/esp_app_format/esp_app_desc.c.o
+Archiving .pio/build/esp32-s3-devkitc-1/esp-idf/esp_app_format/libesp_app_format.a
+Indexing .pio/build/esp32-s3-devkitc-1/esp-idf/esp_app_format/libesp_app_format.a
+Generating project linker script .pio/build/esp32-s3-devkitc-1/sections.ld
+Linking .pio/build/esp32-s3-devkitc-1/firmware.elf
+Retrieving maximum program size .pio/build/esp32-s3-devkitc-1/firmware.elf
+Checking size .pio/build/esp32-s3-devkitc-1/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [==        ]  21.1% (used 69064 bytes from 327680 bytes)
+Flash: [=         ]  11.5% (used 755332 bytes from 6553600 bytes)
+Building .pio/build/esp32-s3-devkitc-1/firmware.bin
+esptool.py v4.8.9
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-builtin, esp-prog, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Auto-detected: /dev/cu.usbmodem101
+Uploading .pio/build/esp32-s3-devkitc-1/firmware.bin
+esptool.py v4.8.9
+Serial port /dev/cu.usbmodem101
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: 30:ed:a0:a8:df:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 16MB
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Flash will be erased from 0x00010000 to 0x000c8fff...
+SHA digest in image updated
+Compressed 21040 bytes to 13381...
+Writing at 0x00000000... (100 %)
+Wrote 21040 bytes (13381 compressed) at 0x00000000 in 0.4 seconds (effective 379.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 146...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.1 seconds (effective 372.0 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000e000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000e000 in 0.1 seconds (effective 1283.6 kbit/s)...
+Hash of data verified.
+Compressed 755728 bytes to 441419...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d078... (7 %)
+Writing at 0x000298fa... (11 %)
+Writing at 0x00032d8b... (14 %)
+Writing at 0x0003bf48... (18 %)
+Writing at 0x00041924... (22 %)
+Writing at 0x000475a4... (25 %)
+Writing at 0x0004d18e... (29 %)
+Writing at 0x00053cf2... (33 %)
+Writing at 0x00059e99... (37 %)
+Writing at 0x00060630... (40 %)
+Writing at 0x00066605... (44 %)
+Writing at 0x0006c4fa... (48 %)
+Writing at 0x0007279e... (51 %)
+Writing at 0x000782af... (55 %)
+Writing at 0x0007ddc8... (59 %)
+Writing at 0x0008356b... (62 %)
+Writing at 0x000896e6... (66 %)
+Writing at 0x0008ef56... (70 %)
+Writing at 0x000949c1... (74 %)
+Writing at 0x00099fd8... (77 %)
+Writing at 0x000a00f9... (81 %)
+Writing at 0x000a6f2c... (85 %)
+Writing at 0x000af531... (88 %)
+Writing at 0x000b62b2... (92 %)
+Writing at 0x000bbe59... (96 %)
+Writing at 0x000c2199... (100 %)
+Wrote 755728 bytes (441419 compressed) at 0x00010000 in 7.5 seconds (effective 806.5 kbit/s)...
+Hash of data verified.
+Hard resetting via RTS pin...
+--- Terminal on /dev/cu.usbmodem101 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+I (762) esp_psram: SPI SRAM memory test OK
+I (771) cpu_start: Pro cpu start user code
+I (771) cpu_start: cpu freq: 160000000 Hz
+I (771) app_init: Application information:
+I (771) app_init: Project name:     bluepad32_arduino_app_template
+I (777) app_init: App version:      4.2.1-2-g0e70eafc-dirty
+I (782) app_init: Compile time:     Apr 21 2025 22:59:54
+I (787) app_init: ELF file SHA256:  bebfba060...
+I (791) app_init: ESP-IDF:          5.4.1.250411
+I (796) efuse_init: Min chip rev:     v0.0
+I (800) efuse_init: Max chip rev:     v0.99 
+I (804) efuse_init: Chip rev:         v0.2
+I (807) heap_init: Initializing. RAM available for dynamic allocation:
+I (814) heap_init: At 3FCAE3C8 len 0003B348 (236 KiB): RAM
+I (819) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (824) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (829) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM
+I (835) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (842) spi_flash: detected chip: boya
+I (844) spi_flash: flash io: dio
+W (848) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+W (857) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`
+I (865) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (871) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (878) esp_core_dump_flash: Init core dump to flash
+I (883) esp_core_dump_flash: Found partition 'coredump' @ ff0000 65536 bytes
+I (909) esp_core_dump_flash: Core dump data checksum is correct
+I (909) esp_core_dump_flash: Found core dump 16324 bytes in flash @ 0xff0000
+I (910) coexist: coex firmware version: 88dafd1
+I (914) coexist: coexist rom version e7ae62f
+I (919) main_task: Started on CPU0
+I (922) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (930) main_task: Calling app_main()
+Bluepad32 (C) 2016-2025 Ricardo Quesada and contributors.
+Version: v4.2.0
+BTstack: Copyright (C) 2017 BlueKitchen GmbH.
+Version: v1.6.2
+Platform: Arduino
+Max connected gamepads: 4
+BR/EDR support: disabled
+BLE support: enabled
+I (953) BLE_INIT: BT controller compile version [566c8e3]
+I (959) BLE_INIT: Bluetooth MAC: 30:ed:a0:a8:df:6e
+I (964) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10
+I (1006) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)
+Bluetooth Allowlist: Disabled
+I (1057) console: Command history disabled
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+bp32> Could not find property 12
+Could not find property 11
+BTstack up and running at 30:ED:A0:A8:DF:6E
+HCI not ready, cannot send packet, will again try later. Current state idx=1
+Failed command: HCI_EVENT_COMMAND_COMPLETE: opcode = 0x0c05 - status=1
+✅ PSRAM is enabled!
+Total PSRAM: 8388608 bytes
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42003e3e  PS      : 0x00060030  A0      : 0x82015f39  A1      : 0x3fcc7b60  
+A2      : 0x00060023  A3      : 0x00000003  A4      : 0x00060023  A5      : 0x3fcc7d18  
+A6      : 0x3fcb1fbc  A7      : 0x3fca2238  A8      : 0x00000000  A9      : 0x3fcc7b40  
+A10     : 0x00000000  A11     : 0x00000080  A12     : 0x00800000  A13     : 0x01ffffff  
+A14     : 0x3fc9d9d4  A15     : 0x0000abab  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000012  LBEG    : 0x400570e8  LEND    : 0x400570f3  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x42003e3b:0x3fcc7b60 0x42015f36:0x3fcc7b80 0x40383e06:0x3fcc7ba0
+
+
+--------------------------
+>> I manually symbolicated these:
+
+0x42003e3b: lgfx::v1::LGFXBase::setRawColor(unsigned long) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:124
+ (inlined by) void lgfx::v1::LGFXBase::setColor<int>(int) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:123
+ (inlined by) void lgfx::v1::LGFXBase::fillScreen<int>(int const&) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:299
+ (inlined by) setup() at /Users/justin/PlatformIO/Projects/bluepad32/main/sketch.cpp:29
+0x42015f36: arduino_task at /Users/justin/PlatformIO/Projects/bluepad32/components/bluepad32_arduino/arduino_bootstrap.cpp:59
+0x40383e06: vPortTaskWrapper at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+--------------------------
+
+
+
+ELF file SHA256: bebfba060
+
+I (6676) esp_core_dump_flash: Save core dump to flash...
+I (6681) esp_core_dump_common: Backing up stack @ 0x3fcc79c0 and use core dump stack @ 0x3fcacdb0
+I (6690) esp_core_dump_flash: Erase flash 16384 bytes @ 0xff0000
+I (6939) esp_core_dump_flash: Write end offset 0x3fc4, check sum length 4
+I (6939) esp_core_dump_common: Core dump used 1248 bytes on stack. 636 bytes left free.
+I (6942) esp_core_dump_common: Restoring stack @ 0x3fcc79c0
+I (6947) esp_core_dump_flash: Core dump has been saved to flash.
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xa (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037fafa
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd24
+load:0x403cb700,len:0x2f00
+entry 0x403c8920
+I (26) boot: ESP-IDF 5.4.1.250411 2nd stage bootloader
+I (26) boot: compile time Apr 21 2025 22:33:31
+I (26) boot: Multicore bootloader
+I (27) boot: chip revision: v0.2
+I (30) boot: efuse block revision: v1.3
+I (33) boot.esp32s3: Boot SPI Speed : 80MHz
+I (37) boot.esp32s3: SPI Mode       : DIO
+I (41) boot.esp32s3: SPI Flash Size : 16MB
+I (45) boot: Enabling RNG early entropy source...
+I (49) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (58) boot:  0 nvs              WiFi data        01 02 00009000 00005000
+I (65) boot:  1 otadata          OTA data         01 00 0000e000 00002000
+I (71) boot:  2 app0             OTA app          00 10 00010000 00640000
+I (78) boot:  3 app1             OTA app          00 11 00650000 00640000
+I (84) boot:  4 spiffs           Unknown data     01 82 00c90000 00360000
+I (91) boot:  5 coredump         Unknown data     01 03 00ff0000 00010000
+I (97) boot: End of partition table
+I (101) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=23978h (145784) map
+I (134) esp_image: segment 1: paddr=000339a0 vaddr=3fc9d600 size=04c38h ( 19512) load
+I (138) esp_image: segment 2: paddr=000385e0 vaddr=40374000 size=07a38h ( 31288) load
+I (146) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=76c14h (486420) map
+I (232) esp_image: segment 4: paddr=000b6c3c vaddr=4037ba38 size=11b8ch ( 72588) load
+I (248) esp_image: segment 5: paddr=000c87d0 vaddr=600fe100 size=0001ch (    28) load
+I (258) boot: Loaded app from partition at offset 0x10000
+I (259) boot: Disabling RNG early entropy source...
+I (269) octal_psram: vendor id    : 0x0d (AP)
+I (269) octal_psram: dev id       : 0x02 (generation 3)
+I (269) octal_psram: density      : 0x03 (64 Mbit)
+I (271) octal_psram: good-die     : 0x01 (Pass)
+I (275) octal_psram: Latency      : 0x01 (Fixed)
+I (280) octal_psram: VCC          : 0x01 (3V)
+I (284) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (289) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (294) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (298) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (303) octal_psram: DriveStrength: 0x00 (1/1)
+I (308) MSPI Timing: PSRAM timing tuning index: 5
+I (312) esp_psram: Found 8MB PSRAM device
+I (316) esp_psram: Speed: 80MHz
+I (319) cpu_start: Multicore app
+I (754) esp_psram: SPI SRAM memory test OK
+I (763) cpu_start: Pro cpu start user code
+I (763) cpu_start: cpu freq: 160000000 Hz
+I (763) app_init: Application information:
+I (763) app_init: Project name:     bluepad32_arduino_app_template
+I (769) app_init: App version:      4.2.1-2-g0e70eafc-dirty
+I (774) app_init: Compile time:     Apr 21 2025 22:59:54
+I (779) app_init: ELF file SHA256:  bebfba060...
+I (784) app_init: ESP-IDF:          5.4.1.250411
+I (788) efuse_init: Min chip rev:     v0.0
+I (792) efuse_init: Max chip rev:     v0.99 
+I (796) efuse_init: Chip rev:         v0.2
+I (800) heap_init: Initializing. RAM available for dynamic allocation:
+I (806) heap_init: At 3FCAE3C8 len 0003B348 (236 KiB): RAM
+I (811) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (816) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (822) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM
+I (827) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (834) spi_flash: detected chip: boya
+I (837) spi_flash: flash io: dio
+W (840) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+W (849) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`
+I (858) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (864) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (870) esp_core_dump_flash: Init core dump to flash
+I (875) esp_core_dump_flash: Found partition 'coredump' @ ff0000 65536 bytes
+I (901) esp_core_dump_flash: Core dump data checksum is correct
+I (901) esp_core_dump_flash: Found core dump 16324 bytes in flash @ 0xff0000
+I (902) coexist: coex firmware version: 88dafd1
+I (907) coexist: coexist rom version e7ae62f
+I (911) main_task: Started on CPU0
+I (914) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (922) main_task: Calling app_main()
+Bluepad32 (C) 2016-2025 Ricardo Quesada and contributors.
+Version: v4.2.0
+BTstack: Copyright (C) 2017 BlueKitchen GmbH.
+Version: v1.6.2
+Platform: Arduino
+Max connected gamepads: 4
+BR/EDR support: disabled
+BLE support: enabled
+I (945) BLE_INIT: BT controller compile version [566c8e3]
+I (951) BLE_INIT: Bluetooth MAC: 30:ed:a0:a8:df:6e
+I (956) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10
+I (1000) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)
+Bluetooth Allowlist: Disabled
+I (1018) console: Command history disabled

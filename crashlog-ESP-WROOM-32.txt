@@ -1,0 +1,434 @@
+ *  Executing task: platformio run --target upload --target monitor --environment esp32doit-devkit-v1 
+
+Processing esp32doit-devkit-v1 (platform: espressif32; board: esp32doit-devkit-v1; framework: espidf)
+-------------------------------------------------------------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32doit-devkit-v1.html
+PLATFORM: Espressif 32 (54.3.20) > DOIT ESP32 DEVKIT V1
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-espidf @ 3.50401.0 (5.4.1) 
+ - tool-cmake @ 3.30.2 
+ - tool-esptoolpy @ 4.8.9 
+ - tool-mkfatfs @ 2.0.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-mkspiffs @ 2.230.0 (2.30) 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 14.2.0+20240403 
+ - tool-xtensa-esp-elf-gdb @ 14.2.0+20240403 
+ - toolchain-esp32ulp @ 1.23800.240113 (2.38.0) 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20241119
+Reading CMake configuration...
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Retrieving maximum program size .pio/build/esp32doit-devkit-v1/firmware.elf
+Checking size .pio/build/esp32doit-devkit-v1/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [===       ]  26.4% (used 86636 bytes from 327680 bytes)
+Flash: [==        ]  19.8% (used 830556 bytes from 4194304 bytes)
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-prog, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Auto-detected: /dev/cu.usbserial-0001
+Uploading .pio/build/esp32doit-devkit-v1/firmware.bin
+esptool.py v4.8.9
+Serial port /dev/cu.usbserial-0001
+Connecting......
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 24:62:ab:b0:61:90
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x00010000 to 0x000dafff...
+SHA digest in image updated
+Compressed 25984 bytes to 16380...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16380 compressed) at 0x00001000 in 0.8 seconds (effective 268.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 323.0 kbit/s)...
+Hash of data verified.
+Compressed 830960 bytes to 491335...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d045... (6 %)
+Writing at 0x00029ddd... (10 %)
+Writing at 0x00033378... (13 %)
+Writing at 0x0003d51e... (16 %)
+Writing at 0x000435b2... (20 %)
+Writing at 0x00048e1e... (23 %)
+Writing at 0x0004e95e... (26 %)
+Writing at 0x00055233... (30 %)
+Writing at 0x0005b3ac... (33 %)
+Writing at 0x00061760... (36 %)
+Writing at 0x0006752c... (40 %)
+Writing at 0x0006d287... (43 %)
+Writing at 0x0007362d... (46 %)
+Writing at 0x000793d8... (50 %)
+Writing at 0x0007f079... (53 %)
+Writing at 0x0008545e... (56 %)
+Writing at 0x0008b341... (60 %)
+Writing at 0x00090efe... (63 %)
+Writing at 0x00096791... (66 %)
+Writing at 0x0009beb9... (70 %)
+Writing at 0x000a179b... (73 %)
+Writing at 0x000a71ff... (76 %)
+Writing at 0x000ad4b5... (80 %)
+Writing at 0x000b4f4c... (83 %)
+Writing at 0x000bc6cd... (86 %)
+Writing at 0x000c346d... (90 %)
+Writing at 0x000c8cd5... (93 %)
+Writing at 0x000ce623... (96 %)
+Writing at 0x000d4777... (100 %)
+Wrote 830960 bytes (491335 compressed) at 0x00010000 in 11.7 seconds (effective 566.3 kbit/s)...
+Hash of data verified.
+Hard resetting via RTS pin...
+--- Terminal on /dev/cu.usbserial-0001 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+00,hd_drv:0rv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x40080634
+I (31) boot: ESP-IDF 5.4.1 2nd stage bootloader
+I (31) boot: compile time Apr 21 2025 23:51:45
+I (31) boot: Multicore bootloader
+I (32) boot: chip revision: v1.0
+I (35) boot.esp32: SPI Speed      : 40MHz
+I (39) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 4MB
+I (46) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (53) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (79) boot: End of partition table
+I (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24c04h (150532) map
+I (141) esp_image: segment 1: paddr=00034c2c vaddr=3ff80000 size=0001ch (    28) load
+I (141) esp_image: segment 2: paddr=00034c50 vaddr=3ffbdb60 size=05444h ( 21572) load
+I (153) esp_image: segment 3: paddr=0003a09c vaddr=40080000 size=05f7ch ( 24444) load
+I (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=83890h (538768) map
+I (347) esp_image: segment 5: paddr=000c38b8 vaddr=40085f7c size=1750ch ( 95500) load
+I (398) boot: Loaded app from partition at offset 0x10000
+I (399) boot: Disabling RNG early entropy source...
+I (409) cpu_start: Multicore app
+I (418) cpu_start: Pro cpu start user code
+I (418) cpu_start: cpu freq: 160000000 Hz
+I (418) app_init: Application information:
+I (418) app_init: Project name:     bluepad32_arduino_app_template
+I (424) app_init: App version:      4.2.1-2-g0e70eafc-dirty
+I (429) app_init: Compile time:     Apr 21 2025 23:51:23
+I (434) app_init: ELF file SHA256:  b03064c3c...
+I (439) app_init: ESP-IDF:          5.4.1
+I (442) efuse_init: Min chip rev:     v0.0
+I (446) efuse_init: Max chip rev:     v3.99 
+I (450) efuse_init: Chip rev:         v1.0
+I (454) heap_init: Initializing. RAM available for dynamic allocation:
+I (460) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (465) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (471) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (476) heap_init: At 3FFD2DD0 len 0000D230 (52 KiB): DRAM
+I (481) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (486) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (492) heap_init: At 4009D488 len 00002B78 (10 KiB): IRAM
+I (499) spi_flash: detected chip: generic
+I (501) spi_flash: flash io: dio
+W (504) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+W (513) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`
+I (522) esp_core_dump_flash: Init core dump to flash
+E (526) esp_core_dump_flash: No core dump partition found!
+E (531) esp_core_dump_flash: No core dump partition found!
+I (537) coexist: coex firmware version: e727207
+I (542) main_task: Started on CPU0
+I (545) main_task: Calling app_main()
+Bluepad32 (C) 2016-2025 Ricardo Quesada and contributors.
+Version: v4.2.0
+BTstack: Copyright (C) 2017 BlueKitchen GmbH.
+Version: v1.6.2
+Platform: Arduino
+Max connected gamepads: 4
+BR/EDR support: enabled
+BLE support: enabled
+Device ID SDP service record size: 64
+Gap security level: 2
+Periodic Inquiry: max=5, min=4, len=3
+I (593) BTDM_INIT: BT controller compile version [dc1cd58]
+I (599) BTDM_INIT: Bluetooth MAC: 24:62:ab:b0:61:92
+I (605) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+I (685) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)
+Bluetooth Allowlist: Disabled
+I (1196) console: Command history disabled
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+Could not find property 12
+Could not find property 11
+bp32> BTstack up and running at 24:62:AB:B0:61:92
+HCI not ready, cannot send packet, will again try later. Current state idx=1
+❌ PSRAM init failed!
+E (6308) spi: spi_bus_initialize(815): no support changing io default level 
+W (6310) LGFX: Failed to spi_bus_initialize. 
+E (6311) spi_master: spi_master_init_driver(274): host_id not initialized
+W (6315) LGFX: Failed to spi_bus_add_device. 
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x400d33ea  PS      : 0x00060530  A0      : 0x800e937d  A1      : 0x3ffdeea0  
+A2      : 0x00000003  A3      : 0x00060023  A4      : 0x00060023  A5      : 0x3ffdef70  
+A6      : 0x3ffb7a48  A7      : 0x3ffc2fa8  A8      : 0x00000000  A9      : 0x3ffdee80  
+A10     : 0x00000000  A11     : 0x00000080  A12     : 0x80094d21  A13     : 0x3ffdedb0  
+A14     : 0x00000003  A15     : 0x00060023  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000012  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400d33e7:0x3ffdeea0 0x400e937a:0x3ffdeec0 0x40094982:0x3ffdeee0
+
+
+--------------------------
+>> I manually symbolicated these:
+
+0x400d33e7: lgfx::v1::LGFXBase::setRawColor(unsigned long) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:124
+ (inlined by) void lgfx::v1::LGFXBase::setColor<int>(int) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:123
+ (inlined by) void lgfx::v1::LGFXBase::fillScreen<int>(int const&) at /Users/justin/PlatformIO/Projects/bluepad32/components/LovyanGFX-1.2.0/src/lgfx/v1/LGFXBase.hpp:299
+ (inlined by) setup() at /Users/justin/PlatformIO/Projects/bluepad32/main/sketch.cpp:29
+0x400e937a: arduino_task at /Users/justin/PlatformIO/Projects/bluepad32/components/bluepad32_arduino/arduino_bootstrap.cpp:59
+0x40094982: vPortTaskWrapper at /Users/justin/.platformio/packages/framework-espidf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+--------------------------
+
+ELF file SHA256: b03064c3c
+
+I (6401) esp_core_dump_flash: Save core dump to flash...
+E (6406) esp_core_dump_flash: Core dump flash config is corrupted! CRC=0x7bd5c66f instead of 0x0
+E (6415) esp_core_dump_elf: Elf write init failed!
+E (6419) esp_core_dump_common: Core dump write failed with error=-1
+I (6425) esp_core_dump_flash: Core dump has been saved to flash.
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x40080634
+I (30) boot: ESP-IDF 5.4.1 2nd stage bootloader
+I (31) boot: compile time Apr 21 2025 23:51:45
+I (31) boot: Multicore bootloader
+I (32) boot: chip revision: v1.0
+I (35) boot.esp32: SPI Speed      : 40MHz
+I (39) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 4MB
+I (46) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (53) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (79) boot: End of partition table
+I (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24c04h (150532) map
+I (141) esp_image: segment 1: paddr=00034c2c vaddr=3ff80000 size=0001ch (    28) load
+I (141) esp_image: segment 2: paddr=00034c50 vaddr=3ffbdb60 size=05444h ( 21572) load
+I (153) esp_image: segment 3: paddr=0003a09c vaddr=40080000 size=05f7ch ( 24444) load
+I (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=83890h (538768) map
+I (347) esp_image: segment 5: paddr=000c38b8 vaddr=40085f7c size=1750ch ( 95500) load
+I (398) boot: Loaded app from partition at offset 0x10000
+I (398) boot: Disabling RNG early entropy source...
+I (409) cpu_start: Multicore app
+I (418) cpu_start: Pro cpu start user code
+I (418) cpu_start: cpu freq: 160000000 Hz
+I (418) app_init: Application information:
+I (418) app_init: Project name:     bluepad32_arduino_app_template
+I (424) app_init: App version:      4.2.1-2-g0e70eafc-dirty
+I (429) app_init: Compile time:     Apr 21 2025 23:51:23
+I (434) app_init: ELF file SHA256:  b03064c3c...
+I (438) app_init: ESP-IDF:          5.4.1
+I (442) efuse_init: Min chip rev:     v0.0
+I (446) efuse_init: Max chip rev:     v3.99 
+I (450) efuse_init: Chip rev:         v1.0
+I (454) heap_init: Initializing. RAM available for dynamic allocation:
+I (460) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (465) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (470) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (475) heap_init: At 3FFD2DD0 len 0000D230 (52 KiB): DRAM
+I (481) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (486) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (492) heap_init: At 4009D488 len 00002B78 (10 KiB): IRAM
+I (498) spi_flash: detected chip: generic
+I (500) spi_flash: flash io: dio
+W (504) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+W (513) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`
+I (522) esp_core_dump_flash: Init core dump to flash
+E (526) esp_core_dump_flash: No core dump partition found!
+E (531) esp_core_dump_flash: No core dump partition found!
+I (536) coexist: coex firmware version: e727207
+I (541) main_task: Started on CPU0
+I (544) main_task: Calling app_main()
+Bluepad32 (C) 2016-2025 Ricardo Quesada and contributors.
+Version: v4.2.0
+BTstack: Copyright (C) 2017 BlueKitchen GmbH.
+Version: v1.6.2
+Platform: Arduino
+Max connected gamepads: 4
+BR/EDR support: enabled
+BLE support: enabled
+Device ID SDP service record size: 64
+Gap security level: 2
+Periodic Inquiry: max=5, min=4, len=3
+I (594) BTDM_INIT: BT controller compile version [dc1cd58]
+I (600) BTDM_INIT: Bluetooth MAC: 24:62:ab:b0:61:92
+I (607) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+Bluetooth Allowlist: Disabled
+I (1144) console: Command history disabled
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+Could not find property 12
+Could not find property 11
+bp32> BTstack up and running at 24:62:AB:B0:61:92
+HCI not ready, cannot send packet, will again try later. Current state idx=1
+❌ PSRAM init failed!
+E (6258) spi: spi_bus_initialize(815): no support changing io default level 
+W (6260) LGFX: Failed to spi_bus_initialize. 
+E (6261) spi_master: spi_master_init_driver(274): host_id not initialized
+W (6265) LGFX: Failed to spi_bus_add_device. 
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x400d33ea  PS      : 0x00060530  A0      : 0x800e937d  A1      : 0x3ffdeea0  
+A2      : 0x00000003  A3      : 0x00060023  A4      : 0x00060023  A5      : 0x3ffdef70  
+A6      : 0x3ffb7a48  A7      : 0x3ffc2fa8  A8      : 0x00000000  A9      : 0x3ffdee80  
+A10     : 0x00000000  A11     : 0x00000080  A12     : 0x80094d21  A13     : 0x3ffbfed0  
+A14     : 0x00000003  A15     : 0x00060023  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000012  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400d33e7:0x3ffdeea0 0x400e937a:0x3ffdeec0 0x40094982:0x3ffdeee0
+
+
+
+
+ELF file SHA256: b03064c3c
+
+I (6549) esp_core_dump_flash: Save core dump to flash...
+E (6554) esp_core_dump_flash: Core dump flash config is corrupted! CRC=0x7bd5c66f instead of 0x0
+E (6563) esp_core_dump_elf: Elf write init failed!
+E (6567) esp_core_dump_common: Core dump write failed with error=-1
+I (6573) esp_core_dump_flash: Core dump has been saved to flash.
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x40080634
+I (30) boot: ESP-IDF 5.4.1 2nd stage bootloader
+I (31) boot: compile time Apr 21 2025 23:51:45
+I (31) boot: Multicore bootloader
+I (32) boot: chip revision: v1.0
+I (35) boot.esp32: SPI Speed      : 40MHz
+I (39) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 4MB
+I (46) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (53) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (79) boot: End of partition table
+I (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24c04h (150532) map
+I (141) esp_image: segment 1: paddr=00034c2c vaddr=3ff80000 size=0001ch (    28) load
+I (141) esp_image: segment 2: paddr=00034c50 vaddr=3ffbdb60 size=05444h ( 21572) load
+I (153) esp_image: segment 3: paddr=0003a09c vaddr=40080000 size=05f7ch ( 24444) load
+I (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=83890h (538768) map
+I (347) esp_image: segment 5: paddr=000c38b8 vaddr=40085f7c size=1750ch ( 95500) load
+I (398) boot: Loaded app from partition at offset 0x10000
+I (398) boot: Disabling RNG early entropy source...
+I (409) cpu_start: Multicore app
+I (418) cpu_start: Pro cpu start user code
+I (418) cpu_start: cpu freq: 160000000 Hz
+I (418) app_init: Application information:
+I (418) app_init: Project name:     bluepad32_arduino_app_template
+I (424) app_init: App version:      4.2.1-2-g0e70eafc-dirty
+I (429) app_init: Compile time:     Apr 21 2025 23:51:23
+I (434) app_init: ELF file SHA256:  b03064c3c...
+I (438) app_init: ESP-IDF:          5.4.1
+I (442) efuse_init: Min chip rev:     v0.0
+I (446) efuse_init: Max chip rev:     v3.99 
+I (450) efuse_init: Chip rev:         v1.0
+I (454) heap_init: Initializing. RAM available for dynamic allocation:
+I (460) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (465) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (470) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (475) heap_init: At 3FFD2DD0 len 0000D230 (52 KiB): DRAM
+I (481) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (486) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (492) heap_init: At 4009D488 len 00002B78 (10 KiB): IRAM
+I (499) spi_flash: detected chip: generic
+I (501) spi_flash: flash io: dio
+W (504) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+W (513) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`
+I (522) esp_core_dump_flash: Init core dump to flash
+E (526) esp_core_dump_flash: No core dump partition found!
+E (531) esp_core_dump_flash: No core dump partition found!
+I (536) coexist: coex firmware version: e727207
+I (541) main_task: Started on CPU0
+I (544) main_task: Calling app_main()
+Bluepad32 (C) 2016-2025 Ricardo Quesada and contributors.
+Version: v4.2.0
+BTstack: Copyright (C) 2017 BlueKitchen GmbH.
+Version: v1.6.2
+Platform: Arduino
+Max connected gamepads: 4
+BR/EDR support: enabled
+BLE support: enabled
+Device ID SDP service record size: 64
+Gap security level: 2
+Periodic Inquiry: max=5, min=4, len=3
+I (594) BTDM_INIT: BT controller compile version [dc1cd58]
+I (600) BTDM_INIT: Bluetooth MAC: 24:62:ab:b0:61:92
+I (607) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+Bluetooth Allowlist: Disabled
+I (1147) console: Command history disabled
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+Could not find property 12
+Could not find property 11
+bp32> BTstack up and running at 24:62:AB:B0:61:92
+HCI not ready, cannot send packet, will again try later. Current state idx=1
+Disconnected (read failed: [Errno 6] Device not configured)
+Reconnecting to /dev/cu.usbserial-0001 .............
