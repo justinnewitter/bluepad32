@@ -1,0 +1,216 @@
+esptool.py --port /dev/cu.usbmodem101 read_flash 0xFF0000 0x10000 /tmp/core.bin
+
+espcoredump.py info_corefile --core /tmp/core.bin --core-format raw .pio/build/esp32-s3-devkitc-1/firmware.elf
+
+===============================================================
+==================== ESP32 CORE DUMP START ====================
+The ROM ELF file won't load automatically since it was not found for the provided chip type.
+
+Crashed task handle: 0x3fcc7d2c, name: 'ArduinoTask', GDB name: 'process 1070365996'
+Crashed task is not in the interrupt context
+
+================== CURRENT THREAD REGISTERS ===================
+exccause       0x1c (LoadProhibitedCause)
+excvaddr       0x12
+epc1           0x40376c93
+epc2           0x0
+epc3           0x0
+epc4           0x0
+epc5           0x0
+epc6           0x0
+eps2           0x0
+eps3           0x0
+eps4           0x0
+eps5           0x0
+eps6           0x0
+pc             0x42003592          0x42003592 <setup()+94>
+lbeg           0x400570e8          1074098408
+lend           0x400570f3          1074098419
+lcount         0xffffffff          4294967295
+sar            0x1b                27
+ps             0x60020             393248
+threadptr      <unavailable>
+br             <unavailable>
+scompare1      <unavailable>
+acclo          <unavailable>
+acchi          <unavailable>
+m0             <unavailable>
+m1             <unavailable>
+m2             <unavailable>
+m3             <unavailable>
+expstate       <unavailable>
+f64r_lo        <unavailable>
+f64r_hi        <unavailable>
+f64s           <unavailable>
+fcr            <unavailable>
+fsr            <unavailable>
+a0             0x8201568d          -2113841523
+a1             0x3fcc7b80          1070365568
+a2             0x60023             393251
+a3             0x3                 3
+a4             0x60023             393251
+a5             0x3fcc7d30          1070366000
+a6             0x3fcb1fd4          1070276564
+a7             0x3fca2238          1070211640
+a8             0x0                 0
+a9             0x3fcc7b60          1070365536
+a10            0x0                 0
+a11            0x80                128
+a12            0x800000            8388608
+a13            0x1ffffff           33554431
+a14            0x3fc9d9fc          1070193148
+a15            0xabab              43947
+
+==================== CURRENT THREAD STACK =====================
+#0  lgfx::v1::LGFXBase::fillScreen<int> (this=0x3fca2238 <tft>, color=<synthetic pointer>: 0) at components/LovyanGFX-1.2.0/src/lgfx/v1/panel/../Panel.hpp:96
+#1  setup () at main/sketch.cpp:29
+#2  0x4201568d in arduino_task (params=0x0) at components/bluepad32_arduino/arduino_bootstrap.cpp:59
+#3  0x40383e09 in vPortTaskWrapper (pxCode=0x42015684 <arduino_task(void*)>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+======================== THREADS INFO =========================
+  Id   Target Id          Frame 
+* 1    process 1070365996 lgfx::v1::LGFXBase::fillScreen<int> (this=0x3fca2238 <tft>, color=<synthetic pointer>: 0) at components/LovyanGFX-1.2.0/src/lgfx/v1/panel/../Panel.hpp:96
+  2    process 1070280352 0x4037fafa in esp_cpu_wait_for_intr () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_hw_support/cpu.c:64
+  3    process 1070278456 0x4037fafa in esp_cpu_wait_for_intr () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_hw_support/cpu.c:64
+  4    process 1070276560 0x400559e0 in ?? ()
+  5    process 1070265092 0x400559e0 in ?? ()
+  6    process 1070356908 0x400559e0 in ?? ()
+  7    process 1070266732 0x400559e0 in ?? ()
+  8    process 1070341020 0x400559e0 in ?? ()
+  9    process 1070271188 0x400559e0 in ?? ()
+
+
+       TCB             NAME PRIO C/B  STACK USED/FREE
+---------- ---------------- -------- ----------------
+0x3fcc7d2c      ArduinoTask      1/1         976/7208
+0x3fcb2ea0            IDLE1      0/0          640/884
+0x3fcb2738            IDLE0      0/0          640/892
+0x3fcb1fd0             main      1/1         784/3300
+0x3fcaf304             ipc0    23/23          656/608
+0x3fcc59ac     console_repl      2/2        1328/2760
+0x3fcaf96c             ipc1    24/24          656/616
+0x3fcc1b9c     btController    23/23         736/3352
+0x3fcb0ad4        esp_timer    22/22         656/3424
+
+==================== THREAD 1 (TCB: 0x3fcc7d2c, name: 'ArduinoTask') =====================
+#0  lgfx::v1::LGFXBase::fillScreen<int> (this=0x3fca2238 <tft>, color=<synthetic pointer>: 0) at components/LovyanGFX-1.2.0/src/lgfx/v1/panel/../Panel.hpp:96
+#1  setup () at main/sketch.cpp:29
+#2  0x4201568d in arduino_task (params=0x0) at components/bluepad32_arduino/arduino_bootstrap.cpp:59
+#3  0x40383e09 in vPortTaskWrapper (pxCode=0x42015684 <arduino_task(void*)>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 2 (TCB: 0x3fcb2ea0, name: 'IDLE1') =====================
+#0  0x4037fafa in esp_cpu_wait_for_intr () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_hw_support/cpu.c:64
+#1  0x4202a38d in esp_vApplicationIdleHook () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_system/freertos_hooks.c:58
+#2  0x40384d5c in prvIdleTask (pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:4353
+#3  0x40383e09 in vPortTaskWrapper (pxCode=0x40384d50 <prvIdleTask>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 3 (TCB: 0x3fcb2738, name: 'IDLE0') =====================
+#0  0x4037fafa in esp_cpu_wait_for_intr () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_hw_support/cpu.c:64
+#1  0x4202a38d in esp_vApplicationIdleHook () at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_system/freertos_hooks.c:58
+#2  0x40384d5c in prvIdleTask (pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:4353
+#3  0x40383e09 in vPortTaskWrapper (pxCode=0x40384d50 <prvIdleTask>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 4 (TCB: 0x3fcb1fd0, name: 'main') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3fc9dac0 <xKernelLock>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40386445 in xTaskGenericNotifyWait (uxIndexToWait=0, ulBitsToClearOnEntry=<optimized out>, ulBitsToClearOnExit=4294967295, pulNotificationValue=0x0, xTicksToWait=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:5850
+#4  0x42008a50 in btstack_run_loop_freertos_execute () at components/btstack/platform/freertos/btstack_run_loop_freertos.c:202
+#5  0x42003a45 in btstack_run_loop_execute () at components/btstack/src/btstack_run_loop.c:310
+#6  0x420030fe in app_main () at main/main.c:47
+#7  0x42075c35 in main_task (args=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/app_startup.c:208
+#8  0x40383e09 in vPortTaskWrapper (pxCode=0x42075b64 <main_task>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 5 (TCB: 0x3fcaf304, name: 'ipc0') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3fc9dac0 <xKernelLock>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40386330 in ulTaskGenericNotifyTake (uxIndexToWait=0, xClearCountOnExit=1, xTicksToWait=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:5765
+#4  0x40376dec in ipc_task (arg=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_system/esp_ipc.c:62
+#5  0x40383e09 in vPortTaskWrapper (pxCode=0x40376dc0 <ipc_task>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 6 (TCB: 0x3fcc59ac, name: 'console_repl') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3c0b1010) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40382a53 in prvReceiveGeneric (pxRingbuffer=0x3c0b0fa8, pvItem1=0x3fcc55c0, pvItem2=0x0, xItemSize1=0x3fcc5600, xItemSize2=0x0, xMaxSize=1, xTicksToWait=<optimized out>, xTicksToWait@entry=4294967295) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_ringbuf/ringbuf.c:885
+#4  0x40382db1 in xRingbufferReceiveUpTo (xRingbuffer=0x3c0b0fa8, pxItemSize=0x3fcc5600, xTicksToWait=4294967295, xMaxSize=1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_ringbuf/ringbuf.c:1182
+#5  0x42024b03 in uart_read_bytes (uart_num=UART_NUM_0, buf=0x3fcc5640, length=1, ticks_to_wait=4294967295) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_driver_uart/src/uart.c:1532
+#6  0x4202607c in uart_rx_char_via_driver (fd=0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_driver_uart/src/uart_vfs.c:219
+#7  0x4202518a in uart_read_char (fd=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_driver_uart/src/uart_vfs.c:261
+#8  0x42025ef9 in uart_read (fd=0, data=0x3fcaea07, size=1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_driver_uart/src/uart_vfs.c:281
+#9  0x42033895 in esp_vfs_read (r=0x3fcc5a10, fd=<optimized out>, dst=0x3fcaea07, size=1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/vfs/vfs.c:971
+#10 0x42064ea5 in read (fd=0, buf=0x3fcaea07, cnt=1) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/sysread.c:11
+#11 0x4202c5b6 in console_read (fd=0, dst=0x3fcaea07, size=1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_vfs_console/vfs_console.c:119
+#12 0x42033895 in esp_vfs_read (r=0x3fcc5a10, fd=<optimized out>, dst=0x3fcaea07, size=1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/vfs/vfs.c:971
+#13 0x4206464a in __sread (ptr=0x3fcc5a10, cookie=0x3fcae9c0, buf=0x3fcaea07 <error: Cannot access memory at address 0x3fcaea07>, n=1) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c:47
+#14 0x420641dd in __srefill_r (ptr=0x3fcc5a10, fp=0x3fcae9c0) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/refill.c:115
+#15 0x42064219 in __srget_r (ptr=0x3fcc5a10, fp=0x3fcae9c0) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/rget.c:42
+#16 0x42063605 in _fgetc_r (ptr=0x3fcc5a10, fp=0x3fcae9c0) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fgetc.c:94
+#17 0x4206363a in fgetc (fp=0x3fcae9c0) at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fgetc.c:114
+#18 0x4201b873 in linenoiseDumb (buf=0x3fcc5b10 <error: Cannot access memory at address 0x3fcc5b10>, buflen=80, prompt=0x3fcc47b8 <error: Cannot access memory at address 0x3fcc47b8>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/console/linenoise/linenoise.c:1132
+#19 0x4201c64b in linenoise (prompt=0x3fcc47b8 <error: Cannot access memory at address 0x3fcc47b8>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/console/linenoise/linenoise.c:1185
+#20 0x4201b5b7 in esp_console_repl_task (args=0x3fcc47b4) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/console/esp_console_common.c:162
+#21 0x40383e09 in vPortTaskWrapper (pxCode=0x4201b520 <esp_console_repl_task>, pvParameters=0x3fcc47b4) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 7 (TCB: 0x3fcaf96c, name: 'ipc1') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3fc9dac0 <xKernelLock>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40386330 in ulTaskGenericNotifyTake (uxIndexToWait=0, xClearCountOnExit=1, xTicksToWait=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:5765
+#4  0x40376dec in ipc_task (arg=0x1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_system/esp_ipc.c:62
+#5  0x40383e09 in vPortTaskWrapper (pxCode=0x40376dc0 <ipc_task>, pvParameters=0x1) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 8 (TCB: 0x3fcc1b9c, name: 'btController') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3fcc0b1c) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40383c95 in xQueueSemaphoreTake (xQueue=0x3fcc0ac8, xTicksToWait=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/queue.c:1853
+#4  0x4201a3bc in semphr_take_wrapper (semphr=0x3fcc0ab8, block_time_ms=4294967295) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/bt/controller/esp32c3/bt.c:894
+#5  0x40379a94 in btdm_controller_task ()
+#6  0x40383e09 in vPortTaskWrapper (pxCode=0x40379928 <btdm_controller_task>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+==================== THREAD 9 (TCB: 0x3fcb0ad4, name: 'esp_timer') =====================
+#0  0x400559e0 in ?? ()
+#1  0x4038416d in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+#2  vPortExitCritical (mux=0x3fc9dac0 <xKernelLock>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+#3  0x40386330 in ulTaskGenericNotifyTake (uxIndexToWait=0, xClearCountOnExit=1, xTicksToWait=<optimized out>) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/tasks.c:5765
+#4  0x4202c173 in timer_task (arg=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/esp_timer/src/esp_timer.c:459
+#5  0x40383e09 in vPortTaskWrapper (pxCode=0x4202c164 <timer_task>, pvParameters=0x0) at /Users/justin/.platformio/packages/framework-espidf@src-1e73dca7a3f1d16d317f47e5243884d7/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+
+======================= ALL MEMORY REGIONS ========================
+Name   Address   Size   Attrs
+.rtc.force_fast 0x600fe100 0x1c RW A
+.rtc_noinit 0x50000000 0x0 RW  
+.rtc.force_slow 0x50000000 0x0 RW  
+.iram0.vectors 0x40374000 0x403 R XA
+.iram0.text 0x40374404 0x191bf R XA
+.dram0.data 0x3fc9d600 0x4c34 RW A
+.flash.text 0x42000020 0x76b16 R XA
+.flash.appdesc 0x3c080020 0x100 R  A
+.flash.rodata 0x3c080120 0x23870 RW A
+.iram0.data 0x4038d600 0x0 RW  
+.iram0.bss 0x4038d600 0x0 RW  
+.dram0.heap_start 0x3fcae3e0 0x0 RW  
+.coredump.tasks.data 0x3fcc7d2c 0x15c RW 
+.coredump.tasks.data 0x3fcc7ac0 0x260 RW 
+.coredump.tasks.data 0x3fcb2ea0 0x15c RW 
+.coredump.tasks.data 0x3fcb2c10 0x280 RW 
+.coredump.tasks.data 0x3fcb2738 0x15c RW 
+.coredump.tasks.data 0x3fcb24b0 0x280 RW 
+.coredump.tasks.data 0x3fcb1fd0 0x15c RW 
+.coredump.tasks.data 0x3fcb1cb0 0x310 RW 
+.coredump.tasks.data 0x3fcaf304 0x15c RW 
+.coredump.tasks.data 0x3fcaf060 0x290 RW 
+.coredump.tasks.data 0x3fcc59ac 0x15c RW 
+.coredump.tasks.data 0x3fcc5470 0x530 RW 
+.coredump.tasks.data 0x3fcaf96c 0x15c RW 
+.coredump.tasks.data 0x3fcaf6d0 0x290 RW 
+.coredump.tasks.data 0x3fcc1b9c 0x15c RW 
+.coredump.tasks.data 0x3fcc18b0 0x2e0 RW 
+.coredump.tasks.data 0x3fcb0ad4 0x15c RW 
+.coredump.tasks.data 0x3fcb0830 0x290 RW 
+
+===================== ESP32 CORE DUMP END =====================
+===============================================================
